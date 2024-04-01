@@ -1,4 +1,6 @@
-﻿namespace lab01;
+﻿using System.Diagnostics;
+
+namespace lab01;
 
 public class Program
 {
@@ -16,7 +18,7 @@ public class Program
         int tmp;
         for (int i = 0; i < arr.Length - 1; i++)
         {
-            for (int j = 0; j < arr.Length - 1; j++)
+            for (int j = 0; j < arr.Length - i - 1; j++)
             {
                 if (arr[j] > arr[j + 1])
                 {
@@ -96,24 +98,6 @@ public class Program
         return Merge(buffA, buffB);
     }
 
-    static void SelectSort(int option)
-    {
-        int[] arr = new int[20000];
-
-        for (int i = 0; i < arr.Length; i++)
-        {
-            Random rnd = new Random();
-            arr[i] = rnd.Next() % 50;
-        }
-
-        WriteArray(arr);
-        if (option == 2)
-            arr = BubbleSort(arr);
-        if (option == 3)
-            arr = MergeSort(arr);
-        WriteArray(arr);
-    }
-
     static void Stack()
     {
         TrainingNutritionMenu<string> menu = new TrainingNutritionMenu<string>();
@@ -134,6 +118,28 @@ public class Program
         string head = new string(menu.Peek());
         Console.WriteLine(menu.Count);
         Console.WriteLine(head);
+    }
+
+    static void SelectSort(int option)
+    {
+        int[] arr = new int[16384];
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Random rnd = new Random();
+            arr[i] = rnd.Next(0, 10000);
+        }
+
+        var watch = Stopwatch.StartNew();
+
+        //WriteArray(arr);
+        if (option == 2)
+            arr = BubbleSort(arr);
+        if (option == 3)
+            arr = MergeSort(arr);
+        //WriteArray(arr);
+        watch.Stop();
+        Console.WriteLine($"Время выполнения программы {watch.ElapsedMilliseconds}ms");
     }
 
     static void Main(string[] args)
