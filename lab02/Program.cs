@@ -12,7 +12,7 @@ class Program
 
         while (item > 0)
         {
-
+            Console.Write("\nНомер задания: ");
             item = Convert.ToInt32(Console.ReadLine());
             switch (item)
             {
