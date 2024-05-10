@@ -4,15 +4,24 @@ class Knapsack
 {
     public static void Run()
     {
+        //List<Item> items = new List<Item>()
+        //{
+        //    new Item("Ноутбук", 15, 3),
+        //    new Item("Кроссовки", 10, 2),
+        //    new Item("Футболка", 7, 3),
+        //    new Item("Книга", 12, 5),
+        //};
+
+        //int capacity = 10;
+
         List<Item> items = new List<Item>()
         {
-            new Item("Ноутбук", 15, 3),
-            new Item("Кроссовки", 10, 2),
-            new Item("Футболка", 7, 3),
-            new Item("Книга", 12, 5),
+            new Item("Ноутбук", 60, 15),
+            new Item("Кроссовки", 90, 30),
+            new Item("Футболка", 100, 50)
         };
 
-        int capacity = 10;
+        int capacity = 80;
 
         List<Item> selectedItems = Knapsack.Solve(items, capacity);
 

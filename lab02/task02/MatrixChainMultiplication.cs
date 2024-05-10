@@ -4,24 +4,6 @@ namespace lab02.task02;
 
 public class MatrixChainMultiplication
 {
-    //int[][] arr = new int[3][];
-    //int[] size = new int[2];
-
-    //public static int Solve(int l, int r)
-    //{
-    //    if (arr[l][r] == -1)
-    //    {
-    //        if (l == r - 1)
-    //        {
-    //            arr[l][r] = 0;
-    //        }
-    //        else
-    //        {
-
-    //        }
-    //    }
-    //}
-
     public static int DynamicSolve(int[] arr)
     {
         int n = arr.Length - 1;
