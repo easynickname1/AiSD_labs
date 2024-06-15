@@ -1,7 +1,4 @@
-﻿using lab02.task01;
-using lab02.task02;
-
-namespace lab02.task03;
+﻿namespace lab02.task03;
 
 public class Algorithms
 {
@@ -115,6 +112,12 @@ public class Algorithms
     /// <param name="array"></param>
     public static void CountingSort(int[] array)
     {
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write(array[i] + " ");
+        }
+        Console.WriteLine();
+        
         // Найдем минимальное и максимальное значения в массиве
         int minVal = array.Min();
         int maxVal = array.Max();
